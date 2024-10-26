@@ -50,6 +50,8 @@ CompWin=()=>{
 playgame=(usrchoice)=>{
     const compchoice = Compchoice();
     console.log("choice was clicked",compchoice);
+    document.querySelector("#usr-slctr p").innerText =`${usrchoice}` ;
+    document.querySelector("#comp-slctr p").innerText = `${compchoice}`;
     if (usrchoice === compchoice){
         draw();
     }else{
@@ -82,18 +84,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startButton.addEventListener("click", () => {
         const userName = document.getElementById("username-input").value.trim(); 
-        Name  = userName;
+       
     if (userName) {
         const userScoreHeader = document.querySelector('.scores h1'); 
         userScoreHeader.textContent = userName;
-        document.querySelector('#usr-slctr h1'),textContent = userName; 
-
+        document.querySelector("#usr-slctr h1").innerText  = userName;
         document.querySelector('.user').style.display = 'none'; 
         document.querySelector('.choices').style.display = 'flex'; 
         document.querySelector('.score').style.display = 'flex';
         document.querySelector('.score-board').style.display = 'block';
         document.querySelector('.score-head').style.display = 'block'; 
-
+        document.querySelector('.selectors').style.display = 'flex';
 
     } else {
         alert("You must enter a name to play.");
